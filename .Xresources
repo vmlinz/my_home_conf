@@ -1,0 +1,13 @@
+xft.fontbackend: xft
+Xft.antialias: 1
+Xft.hinting: 1
+Xft.hintstyle: hintslight
+!Xft.embolden: true
+
+!emacs xresources
+Emacs.FontBackend: xft
+Emacs.Font: Inconsolata-16
+Emacs*Geometry: 80x25+0+0
+Emacs*menuBar: false
+Emacs*toolBar: false
+Emacs*scrollBar: false

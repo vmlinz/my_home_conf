@@ -52,7 +52,7 @@ fi
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\$> '
+    PS1='[${debian_chroot:+($debian_chroot)}\u@\h]:\$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -130,3 +130,6 @@ if [ -d /usr/local/texlive/2009 ];then
 else
     echo "texlive2009 installation not found!"
 fi
+
+# set output to emacs way
+set -o emacs
