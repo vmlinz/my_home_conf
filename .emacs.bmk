@@ -2,13 +2,43 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("Specifying File Variables"
+(("01-chapter7.markdown"
+  (filename . "~/Projects/scm/git/progit/zh/07-customizing-git/01-chapter7.markdown")
+  (front-context-string . "t使用哪个合并工具；\n`merg")
+  (rear-context-string . "`merge.tool`通知Gi")
+  (position . 4711))
+ ("Projects"
+  (filename . "~/Projects/")
+  (front-context-string . "android\n  drwxr-")
+  (rear-context-string . "009-12-15 16:18 ")
+  (position . 235))
+ ("Regular Expressions"
+  (front-context-string . "implementations,")
+  (rear-context-string . "ntax.  In other\n")
+  (position . 31014)
+  (filename . "/usr/share/info/grep")
+  (info-node . "Regular Expressions")
+  (handler . Info-bookmark-jump))
+ ("Finding Files"
+  (front-context-string . "\n2 Finding Files")
+  (rear-context-string . "> Finding Files\n")
+  (position . 11746)
+  (filename . "/usr/share/info/find")
+  (info-node . "Finding Files")
+  (handler . Info-bookmark-jump))
+ ("libc"
+  (filename . "~/Projects/libc/")
+  (front-context-string . "a.out\n  -rw-r--r")
+  (rear-context-string . "009-12-17 15:22 ")
+  (position . 244))
+ ("Specifying File Variables"
   (front-context-string . "\n57.3.4.1 Specif")
   (rear-context-string . " File Variables\n")
   (position . 240843)
   (filename . "/usr/share/info/emacs-23/emacs")
   (info-node . "Specifying File Variables")
-  (handler . Info-bookmark-jump))
+  (handler . Info-bookmark-jump)
+  (annotation . "file local variables, use this to set local variable and compile command"))
  ("notes"
   (filename . "~/Documents/notes/")
   (front-context-string . "dailylife.org\n  ")

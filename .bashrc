@@ -133,3 +133,6 @@ fi
 
 # set output to emacs way
 set -o emacs
+
+# export default gpg key
+export GPGKEY=7527C999
