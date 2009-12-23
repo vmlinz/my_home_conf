@@ -100,7 +100,7 @@ fi
 
 # Chinese support for English Locale
 export LC_CTYPE=zh_CN.UTF-8
-export LANG=zh_CN.UTF-8
+# export LANG=zh_CN.UTF-8, no need for this
 
 # Android Sdk Tools
 if [ -d /home/vmlinz/Projects/android-sdk-linux_86/tools ]; then
@@ -114,7 +114,7 @@ export PATH=$ANDROID_SDK_DIR:$PATH
 # emacs editor
 export EDITOR="emacsclient --alternate-editor=nano -nw"
 export VISUL="emacsclient --alternate-editor=nano"
-export ALTERNATE_EDITOR="emacs -Q"
+export ALTERNATE_EDITOR="nano"
 # alias
 alias em='emacsclient -nw'
 alias emc='emacsclient -c &'
