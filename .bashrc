@@ -122,11 +122,7 @@ alias emc='emacsclient -c &'
 # texlive2009
 if [ -d /usr/local/texlive/2009 ];then
     TLPATH=/usr/local/texlive/2009/bin/x86_64-linux
-    TLMANPATH=/usr/local/texlive/2009/texmf/doc/man
-    TLINFOPATH=/usr/local/texlive/2009/texmf/doc/info
     export PATH=$TLPATH:$PATH
-    export MANPATH=$TLMANPATH:$MANPATH
-    export INFOPATH=$TLINFOPATH:$INFOPATH
 else
     echo "texlive2009 installation not found!"
 fi
