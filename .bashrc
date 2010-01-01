@@ -112,8 +112,8 @@ fi
 export PATH=$ANDROID_SDK_DIR:$PATH
 
 # emacs editor
-export EDITOR="emacsclient --alternate-editor=nano -nw"
-export VISUL="emacsclient --alternate-editor=nano"
+export EDITOR="emacsclient -nw"
+export VISUL="emacsclient"
 export ALTERNATE_EDITOR="nano"
 # alias
 alias em='emacsclient -nw'
