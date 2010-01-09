@@ -112,10 +112,10 @@ fi
 export PATH=$ANDROID_SDK_DIR:$PATH
 
 # emacs editor
-export EDITOR="emacsclient -nw"
-export VISUL="emacsclient"
-export ALTERNATE_EDITOR="nano"
-# alias
+export VISUAL="emacs -q -nw -eval \"(progn (setq inhibit-startup-message t)(global-font-lock-mode t))\""
+export EDITOR=$VISUAL
+export ALTERNATE_EDITOR=$VISUAL
+
 alias em='emacsclient -nw'
 alias emc='emacsclient -c &'
 
