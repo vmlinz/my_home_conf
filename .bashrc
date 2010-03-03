@@ -112,7 +112,7 @@ fi
 export PATH=$ANDROID_SDK_DIR:$PATH
 
 # emacs editor
-export VISUAL="emacs -q -nw -eval \"(progn (setq inhibit-startup-message t)(global-font-lock-mode t))\""
+export VISUAL="nano"
 export EDITOR=$VISUAL
 export ALTERNATE_EDITOR=$VISUAL
 
