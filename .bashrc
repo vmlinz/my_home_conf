@@ -116,15 +116,15 @@ export VISUAL="nano"
 export EDITOR=$VISUAL
 export ALTERNATE_EDITOR=$VISUAL
 
-alias em='emacsclient -nw'
-alias emc='emacsclient -c &'
+alias em='emacsclient -nw 2> /dev/null'
+alias emc='emacsclient -c & 2> /dev/null'
 
 # texlive2009
 if [ -d /usr/local/texlive/2009 ];then
     TLPATH=/usr/local/texlive/2009/bin/x86_64-linux
     export PATH=$TLPATH:$PATH
-else
-    echo "local texlive2009 installation not found!"
+#else
+#   echo "local texlive2009 installation not found!"
 fi
 
 # set output to emacs way
