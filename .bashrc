@@ -132,3 +132,8 @@ set -o emacs
 
 # export default gpg key
 export GPGKEY=7527C999
+
+# play with the go-lang
+export GOROOT=$HOME/Projects/go/go-lang
+export GOARCH=amd64
+export GOOS=linux
