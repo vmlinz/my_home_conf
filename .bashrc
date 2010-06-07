@@ -103,13 +103,20 @@ export LC_CTYPE=zh_CN.UTF-8
 # export LANG=zh_CN.UTF-8, no need for this
 
 # Android Sdk Tools
-if [ -d /home/vmlinz/Projects/android-sdk-linux_86/tools ]; then
+if [ -d $HOME/Projects/android-sdk-linux_86/tools ]; then
     ANDROID_SDK_DIR=/home/vmlinz/Projects/android-sdk-linux_86/tools
 else
     ANDROID_SDK_DIR=
     echo "Android SDK not found!"
 fi
-export PATH=$ANDROID_SDK_DIR:$PATH
+# Android ndk-r4
+if [ -d $HOME/Projects/android/android-ndk-r4 ]; then
+    ANDROID_NDK_DIR=$HOME/Projects/android/android-ndk-r4
+else
+    ANDROID_NDK_DIR=
+    echo "Android ndk-r4 not found!"
+fi
+export PATH=$ANDROID_NDK_DIR:$ANDROID_SDK_DIR:$PATH
 
 # emacs editor
 export VISUAL="nano"
