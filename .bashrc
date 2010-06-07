@@ -111,7 +111,7 @@ else
 fi
 # Android ndk-r4
 if [ -d $HOME/Projects/android/android-ndk-r4 ]; then
-    ANDROID_NDK_DIR=$HOME/Projects/android/android-ndk-r4
+    ANDROID_NDK_DIR=$HOME/Projects/android/ndks/android-ndk-r4
 else
     ANDROID_NDK_DIR=
     echo "Android ndk-r4 not found!"
