@@ -123,8 +123,7 @@ export VISUAL="nano"
 export EDITOR=$VISUAL
 export ALTERNATE_EDITOR=$VISUAL
 
-alias em='emacsclient -nw 2> /dev/null'
-alias emc='emacsclient -c & 2> /dev/null'
+alias em='nano'
 
 # texlive2009
 if [ -d /usr/local/texlive/2009 ];then
