@@ -119,11 +119,11 @@ fi
 export PATH=$ANDROID_NDK_DIR:$ANDROID_SDK_DIR:$PATH
 
 # emacs editor
-export VISUAL="nano"
+export VISUAL="vim"
 export EDITOR=$VISUAL
 export ALTERNATE_EDITOR=$VISUAL
 
-alias em='nano'
+alias em='vim'
 
 # texlive2009
 if [ -d /usr/local/texlive/2009 ];then
