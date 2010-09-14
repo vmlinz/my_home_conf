@@ -1,5 +1,5 @@
 ;; This file is not part of gnu emacs
-;; Time-stamp: <2010-06-27 09:15:29 vmlinz>
+;; Time-stamp: <2010-08-21 01:47:01 vmlinz>
 
 ;; This program is free software; you can redistribute it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -146,10 +146,16 @@
 				     (region-end)) "\""))
       )
 
+    ;; compilation
     (setq compilation-window-height 16)
     (setq compilation-scroll-output t)
-    (setq gdb-show-main t)
-    (setq gdb-many-windows t)
+    ;; gdb
+    (add-hook 'gud-mode-hook
+      '(lambda()
+	 (setq gdb-show-main t)
+	 (setq gdb-many-windows -1)
+	 (define-key gud-mode-map [(f8)] 'gdb-many-windows)
+	 ))
 
     (require 'xcscope)
 
@@ -174,6 +180,7 @@
     (local-set-key "\C-c\C-c" 'comment-dwim)
     (define-key c-mode-base-map [(return)] 'newline-and-indent)
     (define-key c-mode-base-map [(f7)] 'compile)
+    (define-key c-mode-base-map [(f8)] 'gdb)
     (define-key c-mode-base-map [(meta \')] 'c-indent-command)
     )
   (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
@@ -633,7 +640,8 @@ a sound to be played"
 ;; lisp indent offset to 2
 (add-hook 'emacs-lisp-mode-hook
   '(lambda()
-     (setq lisp-indent-offset 2))
+     (setq lisp-indent-offset 2)
+     (yas/minor-mode t))
   )
 ;; byte compile emacs init file and load it
 (global-set-key [f12]
