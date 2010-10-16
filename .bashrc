@@ -124,6 +124,7 @@ export EDITOR=$VISUAL
 export ALTERNATE_EDITOR=$VISUAL
 
 alias em="nano"
+alias emc="emacsclient -t --alternate-editor="" -c "$@""
 
 # texlive2009
 if [ -d /usr/local/texlive/2009 ];then
