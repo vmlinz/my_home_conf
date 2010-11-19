@@ -123,8 +123,8 @@ export VISUAL="vim"
 export EDITOR=$VISUAL
 export ALTERNATE_EDITOR=$VISUAL
 
-alias em="nano"
-alias emc="emacsclient -t --alternate-editor="" -c "$@""
+alias em="zile"
+alias emc="emacsclient -t"
 
 # texlive2009
 if [ -d /usr/local/texlive/2009 ];then
