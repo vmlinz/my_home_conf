@@ -126,7 +126,7 @@ export EDITOR=$VISUAL
 export ALTERNATE_EDITOR=$VISUAL
 
 alias em="zile"
-alias emc="emacsclient -t"
+alias emc="emacsclient -t --alternate-editor="""
 
 # texlive2009
 if [ -d /usr/local/texlive/2009 ];then
