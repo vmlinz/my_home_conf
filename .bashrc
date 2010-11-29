@@ -105,20 +105,20 @@ export LC_CTYPE=zh_CN.UTF-8
 # export LANG=zh_CN.UTF-8, no need for this
 
 # Android Sdk Tools
-if [ -d $HOME/Projects/android-sdk-linux_86/tools ]; then
-    ANDROID_SDK_DIR=/home/vmlinz/Projects/android-sdk-linux_86/tools
-else
-    ANDROID_SDK_DIR=
-    echo "Android SDK not found!"
-fi
+#if [ -d $HOME/Projects/android-sdk-linux_86/tools ]; then
+#    ANDROID_SDK_DIR=/home/vmlinz/Projects/android-sdk-linux_86/tools
+#else
+#    ANDROID_SDK_DIR=
+#    echo "Android SDK not found!"
+#fi
 # Android ndk-r4
-if [ -d $HOME/Projects/android/ndks/android-ndk-r4 ]; then
-    ANDROID_NDK_DIR=$HOME/Projects/android/ndks/android-ndk-r4
-else
-    ANDROID_NDK_DIR=
-    echo "Android ndk-r4 not found!"
-fi
-export PATH=$ANDROID_NDK_DIR:$ANDROID_SDK_DIR:$PATH
+#if [ -d $HOME/Projects/android/ndks/android-ndk-r4 ]; then
+#    ANDROID_NDK_DIR=$HOME/Projects/android/ndks/android-ndk-r4
+#else
+#    ANDROID_NDK_DIR=
+#    echo "Android ndk-r4 not found!"
+#fi
+#export PATH=$ANDROID_NDK_DIR:$ANDROID_SDK_DIR:$PATH
 
 # emacs editor
 export VISUAL="vim"
@@ -129,12 +129,12 @@ alias em="zile"
 alias emc="emacsclient -t --alternate-editor="""
 
 # texlive2009
-if [ -d /usr/local/texlive/2009 ];then
-    TLPATH=/usr/local/texlive/2009/bin/x86_64-linux
-    export PATH=$TLPATH:$PATH
+#if [ -d /usr/local/texlive/2009 ];then
+#    TLPATH=/usr/local/texlive/2009/bin/x86_64-linux
+#    export PATH=$TLPATH:$PATH
 #else
 #   echo "local texlive2009 installation not found!"
-fi
+#fi
 
 # set output to emacs way
 set -o emacs
@@ -143,6 +143,9 @@ set -o emacs
 export GPGKEY=7527C999
 
 # play with the go-lang
-export GOROOT=$HOME/Projects/go/go-lang
-export GOARCH=amd64
-export GOOS=linux
+#export GOROOT=$HOME/Projects/go/go-lang
+#export GOARCH=amd64
+#export GOOS=linux
+
+# rebind terminal stop to ^x to enable ^S for isearch
+stty stop ^X
