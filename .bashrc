@@ -146,3 +146,6 @@ export GPGKEY=7527C999
 export GOROOT=$HOME/Projects/go/go-lang
 export GOARCH=amd64
 export GOOS=linux
+
+# set tty stop bit to ^x, so I can use ^s to isearch
+stty stop ^x
