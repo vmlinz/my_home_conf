@@ -147,5 +147,8 @@ export GOROOT=$HOME/Projects/go/go-lang
 export GOARCH=amd64
 export GOOS=linux
 
+# current linux headers dir
+export MKHD="/usr/src/linux-headers-$(uname -r)"
+
 # set tty stop bit to ^x, so I can use ^s to isearch
 stty stop ^x
