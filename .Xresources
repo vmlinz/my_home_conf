@@ -5,8 +5,11 @@ Xft.hintstyle: hintslight
 !Xft.embolden: true
 
 !emacs xresources
-Emacs.FontBackend: xft
-Emacs.Font: Inconsolata-16
+Emacs*FontBackend: xft
+Emacs*Font: Inconsolata-16
 Emacs*Geometry: 80x25+0+0
 !Emacs*menuBar: true
 Emacs*toolBar: false
+Emacs*scrollBarWidth: 0
+Emacs*verticalScrollBars: false
+Emacs*cursorBlink: false
