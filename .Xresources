@@ -13,3 +13,4 @@ Emacs*toolBar: false
 Emacs*scrollBarWidth: 0
 Emacs*verticalScrollBars: false
 Emacs*cursorBlink: false
+Emacs*scrollBar: false
