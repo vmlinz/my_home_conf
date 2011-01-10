@@ -70,7 +70,7 @@ if (BATCH == 0)
 
 % To disable it, uncomment the next line.  Note that menus will still be
 % available but the menubar will be hidden when not in use.
-enable_top_status_line (0);
+enable_top_status_line(0);
 
 %%%%%%%%%%%%%%%% toggle on auto compression %%%%%%%%%%%%%%%
 auto_compression_mode(1);
