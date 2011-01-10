@@ -132,8 +132,8 @@ alias emc="emacsclient -t --alternate-editor="""
 if [ -d /usr/local/texlive/2009 ];then
     TLPATH=/usr/local/texlive/2009/bin/x86_64-linux
     export PATH=$TLPATH:$PATH
-#else
-#   echo "local texlive2009 installation not found!"
+else
+   echo "local texlive2009 installation not found!"
 fi
 
 # set output to emacs way

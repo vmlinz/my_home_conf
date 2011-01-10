@@ -4,7 +4,7 @@ Xft.hinting: 1
 Xft.hintstyle: hintslight
 !Xft.embolden: true
 
-!emacs
+!emacs xresources
 Emacs*FontBackend: xft
 Emacs*Font: Inconsolata-16
 Emacs*Geometry: 80x25+0+0
@@ -13,5 +13,5 @@ Emacs*toolBar: false
 Emacs*scrollBarWidth: 0
 Emacs*verticalScrollBars: false
 Emacs*cursorBlink: false
-!
 Emacs*synchronous: false
+Emacs*scrollBar: false
