@@ -36,6 +36,9 @@ if (BATCH == 0)
 % menus and move the cursor by uncommenting the next line:
 %  enable_xmouse ();
 
+% Customize status line to make it simple
+set_status_line("(%v):%b    (%m%a%n%o)  %p   %t", 1);
+
 % What should the Ctrl-H key do??
 %
 %  setkey ("bol", "^H");              % causes ^H to go to beg of line (EDT)
