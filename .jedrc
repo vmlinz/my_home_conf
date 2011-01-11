@@ -212,12 +212,12 @@ variable W32shell_Perform_Globbing = 0;
 %
 define global_mode_hook (hook_name)
 {
-   % if (hook_name != "c_mode_hook")
-   %   local_setkey ("self_insert_cmd", "\t");
+   if (hook_name != "c_mode_hook")
+      local_setkey ("self_insert_cmd", "\t");
 }
 
 define dired_hook ()
 {
-   %local_unsetkey ("^K");
-   %local_setkey ("dired_kill_line", "^K");
+   local_unsetkey ("^K");
+   local_setkey ("dired_kill_line", "^K");
 }
