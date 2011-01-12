@@ -91,25 +91,25 @@ auto_compression_mode(1);
 %
 #ifdef UNIX
 USE_ANSI_COLORS = 1;   % if non-zero, JED will display colors on a color
-                        % terminal (Unix and VMS only) See doc/color.txt
-                        % for more discussion and look below for setting
-                        % the colors.
+			% terminal (Unix and VMS only) See doc/color.txt
+			% for more discussion and look below for setting
+			% the colors.
 #endif
 No_Backups = 1;         % If non-zero, backup files will not be created.
 Startup_With_File = -1;  % if greater then zero, force JED to prompt for a file
-                        %   if none is specified on the command line.  If
-                        %   negative, inhibit startup message.
+			%   if none is specified on the command line.  If
+			%   negative, inhibit startup message.
 DISPLAY_TIME    = -1;   % non-zero enables the time to be displayed on
-                        %  status line, zero disables it.  If this value
-                        %  is -1, 24 hour time will be used.
+			%  status line, zero disables it.  If this value
+			%  is -1, 24 hour time will be used.
 HIGHLIGHT	= 1;	% non-zero for region highlighting
 WANT_SYNTAX_HIGHLIGHT = 1;
-                        % Highlight syntax in C, Fortran, and TeX modes.
-                        % See section on colors
-                        %  below for choosing how to highlight.  On Unix and
-                        %  VMS systems, USE_ANSI_COLORS must also be non-zero.
+			% Highlight syntax in C, Fortran, and TeX modes.
+			% See section on colors
+			%  below for choosing how to highlight.  On Unix and
+			%  VMS systems, USE_ANSI_COLORS must also be non-zero.
 HORIZONTAL_PAN	= 20;	% if zero, no automatic panning.  If positive, only
-                        % the current line is panned.  If negative, pan window.
+			% the current line is panned.  If negative, pan window.
 #ifdef UNIX
   LINENUMBERS	= 1;	% A value of zero means do NOT display line number on
 #else                   % status line line.  A value of 1, means to display
@@ -122,12 +122,12 @@ TAB_DEFAULT	= 8;	% Tab size  (also try edit_tab_stops)
 USE_TABS	= 1;	% Use tabs when generating whitespace.
 
 Tab_Always_Inserts_Tab = 0; % Set this to 1 if you want the tab key to insert
-                            % tabs.
+			    % tabs.
 
 WRAP_DEFAULT	= 72;	% wrap column
 ADD_NEWLINE	= 1;	% add newline to file when writing if one not present
 IGNORE_BEEP	= 0;	% Beep terminal during error messages---
-                        %  1 == sound only, 2 = visible bell only, 3 = both
+			%  1 == sound only, 2 = visible bell only, 3 = both
 _traceback	= 0;	% Non zero means dump traceback on S-Lang errors
 WRAP_INDENTS	= 0;	% Non zero indents next line after wrapping current.
 			%  Make this a 1 if you want indented text mode.
@@ -227,7 +227,7 @@ define dired_hook ()
 
 
 %
-% add zsh files to sh_mode
+%  add zsh files to sh_mode
 %
 add_mode_for_extension ("sh", "zsh");
 
@@ -244,3 +244,25 @@ define my_mini_definekey ()
 
 my_mini_definekey ();
 #endif
+
+%
+%  autoload diff_mode
+%
+%  Make sure you installed jed-extra
+%
+
+define my_diff_init ()
+{
+   variable extra_lib = "/usr/share/jed/jed-extra/";
+   append_libdir(path_concat(extra_lib, "extra/"), 1);
+
+   autoload("popup_buffer", "bufutils");
+   autoload("fit_window", "bufutils");
+   autoload("get_blocal", "sl_utils");
+
+   autoload("diff_mode", "diffmode");
+   add_mode_for_extension("diff", "diff");
+   add_mode_for_extension("diff", "patch");
+}
+
+my_diff_init ();
