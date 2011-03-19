@@ -201,11 +201,14 @@ if (0)
 
 %  Compiler interface --- uncomment one of the following:
 %
-% variable Compile_Default_Compiler = "gcc";           % GNU compiler
+#ifdef UNIX
+variable Compile_Default_Compiler = "gcc";           % GNU compiler
+#endif
 % variable Compile_Default_Compiler = "Ultrix_cc";     % cc on Ultrix
 % variable Compile_Default_Compiler = "bcc";           % Borlands BCC
 % variable Compile_Default_Compiler = "sun_acc";       % SunOS C++ and ACC
 % variable Compile_Default_Compiler = "hp_cc";         % HPUX cc
+
 #ifdef WIN32
 variable W32shell_Perform_Globbing = 0;
 #endif
