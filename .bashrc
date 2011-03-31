@@ -104,28 +104,45 @@ fi
 export LC_CTYPE=zh_CN.UTF-8
 # export LANG=zh_CN.UTF-8, no need for this
 
-# Android Sdk Tools
-if [ -d $HOME/Projects/android-sdk-linux_86/tools ]; then
-    ANDROID_SDK_DIR=/home/vmlinz/Projects/android-sdk-linux_86/tools
+# android sdk tools
+ANDROID_SDK_ROOT=$HOME/Projects/android/sdk/android-sdk-linux_86
+if [ -d $ANDROID_SDK_ROOT/tools ]; then
+    ANDROID_SDK_TOOLS=$ANDROID_SDK_ROOT/tools
 else
-    ANDROID_SDK_DIR=
-    echo "Android SDK not found!"
+    ANDROID_SDK_TOOLS=
+    echo "Android SDK tools not found!"
 fi
-# Android ndk-r4
-if [ -d $HOME/Projects/android/ndks/android-ndk-r4 ]; then
-    ANDROID_NDK_DIR=$HOME/Projects/android/ndks/android-ndk-r4
+
+# android sdk platform tools
+if [ -d $ANDROID_SDK_ROOT/platform-tools ]; then
+    ANDROID_SDK_PLAT_TOOLS=$ANDROID_SDK_ROOT/platform_tools
+else
+    ANDROID_SDK_PLAT_TOOLS=
+    echo "Android SDK platform tools not found!"
+fi
+
+# android ndk-r4
+ANDROID_NDK_ROOT=$HOME/Projects/android/ndk
+ANDROID_NDK_VERSION=android-ndk-r5
+if [ -d $ANDROID_NDK_ROOT/$ANDROID_NDK_VERSION ]; then
+    ANDROID_NDK_DIR=$HOME/Projects/android/ndk/android-ndk-r5
 else
     ANDROID_NDK_DIR=
-    echo "Android ndk-r4 not found!"
+    echo "Android ndk not found!"
 fi
-export PATH=$ANDROID_NDK_DIR:$ANDROID_SDK_DIR:$PATH
+
+export PATH=$ANDROID_SDK_TOOLS:$ANDROID_SDK_PLAT_TOOLS:$ANDROID_NDK_DIR:$ANDROID_SDK_DIR:$PATH
+
+# android aosp dir
+MY_AOSP_ROOT=$HOME/Projects/android/aosp
+alias cda='cd $MY_AOSP_ROOT'
 
 # emacs editor
 export VISUAL="vim"
 export EDITOR=$VISUAL
 export ALTERNATE_EDITOR=$VISUAL
 
-alias em="zile"
+alias em="jed"
 alias emc="emacsclient -t --alternate-editor="""
 
 # texlive2009
@@ -148,7 +165,8 @@ export GOARCH=amd64
 export GOOS=linux
 
 # current linux headers dir
-export MKHD="/usr/src/linux-headers-$(uname -r)"
+export MY_KERNEL_HEADER="/usr/src/linux-headers-$(uname -r)"
+
 
 # set tty stop bit to ^x, so I can use ^s to isearch
 stty stop ^x
