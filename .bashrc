@@ -170,3 +170,5 @@ export MY_KERNEL_HEADER="/usr/src/linux-headers-$(uname -r)"
 
 # set tty stop bit to ^x, so I can use ^s to isearch
 stty stop ^x
+
+"cd $(MY_AOSP_ROOT)" && ". build/envsetup.sh"
