@@ -138,7 +138,7 @@ MY_AOSP_ROOT=$HOME/Projects/android/aosp
 alias cda='cd $MY_AOSP_ROOT'
 
 # emacs editor
-export VISUAL="vim"
+export VISUAL="jed"
 export EDITOR=$VISUAL
 export ALTERNATE_EDITOR=$VISUAL
 
