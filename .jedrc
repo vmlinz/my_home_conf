@@ -220,6 +220,8 @@ define global_mode_hook (hook_name)
 {
    if (hook_name != "c_mode_hook")
       local_setkey ("self_insert_cmd", "\t");
+
+   local_setkey ("next_buffer", "\e^N");
 }
 
 define dired_hook ()
