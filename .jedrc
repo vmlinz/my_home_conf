@@ -224,6 +224,9 @@ define global_mode_hook (hook_name)
    local_setkey ("next_buffer", "\e^N");
 }
 
+unsetkey ("\e[15~");
+setkey ("next_buffer", "\e[15~");
+
 define dired_hook ()
 {
    local_unsetkey ("^K");
