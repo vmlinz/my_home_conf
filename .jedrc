@@ -6,67 +6,67 @@
 %   To uncomment a line, simply remove any leading '%' characters.
 if (BATCH == 0)
 {
-%----------------------------------------------------------------------
-%  Keybindings  (not loaded for batch processes)
-%
-%    Default bindings are Emacs-like with EDT emulation on Unix and VMS.
-%    For the PC, only Emacs is enabled by default.  If you do not want EDT
-%    bindings, simply coment out the appropriate line.
-%
-%    For Wordstar like bindings, comment out EDT and Emacs lines and
-%    uncomment Wordstar line.  A similar statement applies for BRIEF,
-%    and for Borland IDE-like bindings.
-%
-() = evalfile("emacs");           % Emacs-like bindings
-%  () = evalfile("edt");             % EDT emulation
-%  () = evalfile ("ide");            % Borland IDE (see also doc/ide-mode.txt)
-%  () = evalfile ("brief");          % Brief Keybindings (MSDOS only!!)
-%  () = evalfile("wordstar");        % obsolete --- use ide instead)
-%  () = evalfile ("cua");            % CUA-like key bindings
-%  Note: For EDT emulation, jed386.exe requires that the GOLD.COM TSR
-%        be loaded.  This TSR is available from space.mit.edu:/pub/davis/jed.
-
-% Some of the above emulations may set keys that conflict with access to
-% the menubars.  For example, emacs uses ESC-f to move by words.  The
-% next line causes the keys to activate the menus.  Comment this out
-% to preserve the emulation.
-%  enable_menu_keys ();
-
-% If you use jed inside an XTerminal, you can use the mouse to access the
-% menus and move the cursor by uncommenting the next line:
-%  enable_xmouse ();
-
-% Customize status line to make it simple
-set_status_line("(%v):%b    (%m%a%n%o)  %p   %t", 1);
-
-% What should the Ctrl-H key do??
-%
-%  setkey ("bol", "^H");              % causes ^H to go to beg of line (EDT)
-%  setkey ("help_prefix", "^H");      % Uncomment to have Ctrl-H as help
-
+	%----------------------------------------------------------------------
+	%  Keybindings  (not loaded for batch processes)
+	%
+	%    Default bindings are Emacs-like with EDT emulation on Unix and VMS.
+	%    For the PC, only Emacs is enabled by default.  If you do not want EDT
+	%    bindings, simply coment out the appropriate line.
+	%
+	%    For Wordstar like bindings, comment out EDT and Emacs lines and
+	%    uncomment Wordstar line.  A similar statement applies for BRIEF,
+	%    and for Borland IDE-like bindings.
+	%
+	() = evalfile("emacs");           % Emacs-like bindings
+	%  () = evalfile("edt");             % EDT emulation
+	%  () = evalfile ("ide");            % Borland IDE (see also doc/ide-mode.txt)
+	%  () = evalfile ("brief");          % Brief Keybindings (MSDOS only!!)
+	%  () = evalfile("wordstar");        % obsolete --- use ide instead)
+	%  () = evalfile ("cua");            % CUA-like key bindings
+	%  Note: For EDT emulation, jed386.exe requires that the GOLD.COM TSR
+	%        be loaded.  This TSR is available from space.mit.edu:/pub/davis/jed.
+	
+	% Some of the above emulations may set keys that conflict with access to
+	% the menubars.  For example, emacs uses ESC-f to move by words.  The
+	% next line causes the keys to activate the menus.  Comment this out
+	% to preserve the emulation.
+	%  enable_menu_keys ();
+	
+	% If you use jed inside an XTerminal, you can use the mouse to access the
+	% menus and move the cursor by uncommenting the next line:
+	%  enable_xmouse ();
+	
+	% Customize status line to make it simple
+	set_status_line("(%v):%b    (%m%a%n%o)  %p   %t", 1);
+	
+	% What should the Ctrl-H key do??
+	%
+	%  setkey ("bol", "^H");              % causes ^H to go to beg of line (EDT)
+	%  setkey ("help_prefix", "^H");      % Uncomment to have Ctrl-H as help
+	
 #ifdef XWINDOWS
-   % See xjed.txt for information regarding the delete key under X Windows.
-   %    x_set_keysym (0xFFFF, 0, "\e[3~");
-   %    setkey ("delete_char_cmd", "\e[3~");
+	% See xjed.txt for information regarding the delete key under X Windows.
+	%    x_set_keysym (0xFFFF, 0, "\e[3~");
+	%    setkey ("delete_char_cmd", "\e[3~");
 #endif
-   %  !!!!  ^S/^Q flow control problems !!!!
-   %  if you experience problems with JED suddenly going into search mode
-   %  for some reason then you are a victim of the emacs emulation's
-   %  binding of the ^S key to the search function.
-   %  TO prevent this from happening, either find out how to
-   %  prevent unwanted ^S/^Q characters or uncomment the next line:
+	%  !!!!  ^S/^Q flow control problems !!!!
+	%  if you experience problems with JED suddenly going into search mode
+	%  for some reason then you are a victim of the emacs emulation's
+	%  binding of the ^S key to the search function.
+	%  TO prevent this from happening, either find out how to
+	%  prevent unwanted ^S/^Q characters or uncomment the next line:
 #ifdef UNIX
-   %enable_flow_control (1);
+	%enable_flow_control (1);
 #endif
-
-%----------------------------------------------------------------------
-
-%  Initial help screen --- comment out to disable.
-%  Note that for the help to be valid, it must occur AFTER bindings are
-%  loaded.
-
-% help();               % Pops up a help window
-
+	
+	%----------------------------------------------------------------------
+	
+	%  Initial help screen --- comment out to disable.
+	%  Note that for the help to be valid, it must occur AFTER bindings are
+	%  loaded.
+	
+	% help();               % Pops up a help window
+	
 }  %Batch
 
 %%%%%%%%%%%%%%%% top menu bar %%%%%%%%%%%%%%%
@@ -91,50 +91,50 @@ auto_compression_mode(1);
 %
 #ifdef UNIX
 USE_ANSI_COLORS = 1;   % if non-zero, JED will display colors on a color
-			% terminal (Unix and VMS only) See doc/color.txt
-			% for more discussion and look below for setting
-			% the colors.
+% terminal (Unix and VMS only) See doc/color.txt
+% for more discussion and look below for setting
+% the colors.
 #endif
 No_Backups = 1;         % If non-zero, backup files will not be created.
 Startup_With_File = -1;  % if greater then zero, force JED to prompt for a file
-			%   if none is specified on the command line.  If
-			%   negative, inhibit startup message.
+%   if none is specified on the command line.  If
+%   negative, inhibit startup message.
 DISPLAY_TIME    = -1;   % non-zero enables the time to be displayed on
-			%  status line, zero disables it.  If this value
-			%  is -1, 24 hour time will be used.
+%  status line, zero disables it.  If this value
+%  is -1, 24 hour time will be used.
 HIGHLIGHT	= 1;	% non-zero for region highlighting
 WANT_SYNTAX_HIGHLIGHT = 1;
-			% Highlight syntax in C, Fortran, and TeX modes.
-			% See section on colors
-			%  below for choosing how to highlight.  On Unix and
-			%  VMS systems, USE_ANSI_COLORS must also be non-zero.
+% Highlight syntax in C, Fortran, and TeX modes.
+% See section on colors
+%  below for choosing how to highlight.  On Unix and
+%  VMS systems, USE_ANSI_COLORS must also be non-zero.
 HORIZONTAL_PAN	= 20;	% if zero, no automatic panning.  If positive, only
-			% the current line is panned.  If negative, pan window.
+% the current line is panned.  If negative, pan window.
 #ifdef UNIX
-  LINENUMBERS	= 1;	% A value of zero means do NOT display line number on
+LINENUMBERS	= 1;	% A value of zero means do NOT display line number on
 #else                   % status line line.  A value of 1, means to display
-  LINENUMBERS	= 2;	% the linenumber. A value greater than 1 will also
+LINENUMBERS	= 2;	% the linenumber. A value greater than 1 will also
 #endif			% display column number information.  I recommend a
-			% value of 2 only at high baud rates
+% value of 2 only at high baud rates
 
 BLINK		= 0;	% if non zero, blink matching parenthesis
 TAB_DEFAULT	= 8;	% Tab size  (also try edit_tab_stops)
 USE_TABS	= 1;	% Use tabs when generating whitespace.
 
 Tab_Always_Inserts_Tab = 0; % Set this to 1 if you want the tab key to insert
-			    % tabs.
+% tabs.
 
 WRAP_DEFAULT	= 72;	% wrap column
 ADD_NEWLINE	= 1;	% add newline to file when writing if one not present
 IGNORE_BEEP	= 0;	% Beep terminal during error messages---
-			%  1 == sound only, 2 = visible bell only, 3 = both
+%  1 == sound only, 2 = visible bell only, 3 = both
 _traceback	= 0;	% Non zero means dump traceback on S-Lang errors
 WRAP_INDENTS	= 0;	% Non zero indents next line after wrapping current.
-			%  Make this a 1 if you want indented text mode.
+%  Make this a 1 if you want indented text mode.
 KILL_LINE_FEATURE = 0;
-			% If non-zero, kill line will kill through end of the
-			%  line if Point is at the beginning of the line. For
-			%  emacs-like behavior, set this to zero.
+% If non-zero, kill line will kill through end of the
+%  line if Point is at the beginning of the line. For
+%  emacs-like behavior, set this to zero.
 
 %---------------------------------------------------------------------------
 % C-mode indentation style
@@ -194,8 +194,8 @@ META_CHAR	= -1;	% All chars with hi bit set will self insert
 
 if (0)
 {
-   $1 = "vt102 vt200 vt220 vt300 vt320 vt420 xterms";
-   if (is_substr($1, getenv("TERM"))) set_term_vtxxx(0);
+	$1 = "vt102 vt200 vt220 vt300 vt320 vt420 xterms";
+	if (is_substr($1, getenv("TERM"))) set_term_vtxxx(0);
 }
 #endif
 
@@ -218,21 +218,20 @@ variable W32shell_Perform_Globbing = 0;
 %
 define global_mode_hook (hook_name)
 {
-   if (hook_name != "c_mode_hook")
-      local_setkey ("self_insert_cmd", "\t");
-
-   local_setkey ("next_buffer", "\e^N");
+	if (hook_name != "c_mode_hook")
+	{
+		local_setkey ("self_insert_cmd", "\t");
+		TAB_DEFAULT	= 8;	% Tab size  (also try edit_tab_stops)
+		USE_TABS	= 1;	% Use tabs when generating whitespace.
+	}
 }
 
-unsetkey ("\e[15~");
-setkey ("next_buffer", "\e[15~");
 
 define dired_hook ()
 {
-   local_unsetkey ("^K");
-   local_setkey ("dired_kill_line", "^K");
+	local_unsetkey ("^K");
+	local_setkey ("dired_kill_line", "^K");
 }
-
 
 %
 %  add zsh files to sh_mode
@@ -242,12 +241,12 @@ add_mode_for_extension ("sh", "zsh");
 #ifdef UNIX
 define my_mini_definekey ()
 {
-   variable mini = "Mini_Map";
-   !if (keymap_p (mini))
-      make_keymap (mini);
-
-   definekey ("next_mini_command", "^N", mini);
-   definekey ("prev_mini_command", "^P", mini);
+	variable mini = "Mini_Map";
+	!if (keymap_p (mini))
+		make_keymap (mini);
+	
+	definekey ("next_mini_command", "^N", mini);
+	definekey ("prev_mini_command", "^P", mini);
 }
 
 my_mini_definekey ();
@@ -261,16 +260,40 @@ my_mini_definekey ();
 
 define my_diff_init ()
 {
-   variable extra_lib = "/usr/share/jed/jed-extra/";
-   append_libdir(path_concat(extra_lib, "extra/"), 1);
-
-   autoload("popup_buffer", "bufutils");
-   autoload("fit_window", "bufutils");
-   autoload("get_blocal", "sl_utils");
-
-   autoload("diff_mode", "diffmode");
-   add_mode_for_extension("diff", "diff");
-   add_mode_for_extension("diff", "patch");
+	variable extra_lib = "/usr/share/jed/jed-extra/";
+	append_libdir(path_concat(extra_lib, "extra/"), 1);
+	
+	autoload("popup_buffer", "bufutils");
+	autoload("fit_window", "bufutils");
+	autoload("get_blocal", "sl_utils");
+	
+	autoload("diff_mode", "diffmode");
+	add_mode_for_extension("diff", "diff");
+	add_mode_for_extension("diff", "patch");
 }
 
 my_diff_init ();
+
+% Navigate on buffers
+require("keydefs");
+setkey ("ide_next_buffer (0)",  Key_Alt_Right);
+setkey ("ide_next_buffer (1)",  Key_Alt_Left);
+
+define ide_next_buffer (previous)
+{
+	variable n, buf;
+	n = buffer_list (); % get the buffers on the stack
+	if (previous)
+		_stk_reverse (n-1);
+        loop (n) {
+		buf = ();
+		n--;
+		if (buf[0] == ' ') continue;
+		sw2buf (buf);
+		_pop_n (n);
+		return;
+	}
+}
+
+% Navigation on windows
+setkey ("otherwindow", Key_Alt_Down);
