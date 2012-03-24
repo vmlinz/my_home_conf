@@ -23,3 +23,5 @@ fi
 
 # export LC_CTYPE for emacs Chinese Input
 export LC_CTYPE=zh_CN.UTF-8
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

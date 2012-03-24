@@ -172,3 +172,5 @@ export MY_KERNEL_HEADER="/usr/src/linux-headers-$(uname -r)"
 stty stop ^x
 
 cda && source build/envsetup.sh
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
