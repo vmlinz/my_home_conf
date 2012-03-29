@@ -252,28 +252,6 @@ define my_mini_definekey ()
 my_mini_definekey ();
 #endif
 
-%
-%  autoload diff_mode
-%
-%  Make sure you installed jed-extra
-%
-
-define my_diff_init ()
-{
-	variable extra_lib = "/usr/share/jed/jed-extra/";
-	append_libdir(path_concat(extra_lib, "extra/"), 1);
-	
-	autoload("popup_buffer", "bufutils");
-	autoload("fit_window", "bufutils");
-	autoload("get_blocal", "sl_utils");
-	
-	autoload("diff_mode", "diffmode");
-	add_mode_for_extension("diff", "diff");
-	add_mode_for_extension("diff", "patch");
-}
-
-my_diff_init ();
-
 % Navigate on buffers
 require("keydefs");
 setkey ("ide_next_buffer (0)",  Key_Alt_Right);
