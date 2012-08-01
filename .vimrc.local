@@ -8,3 +8,5 @@ let GtagsCscope_Ignore_Case = 1
 let GtagsCscope_Absolute_Path = 1
 set cscopetag
 "}
+
+colorscheme zenburn
