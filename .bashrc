@@ -160,10 +160,10 @@ set -o emacs
 export GPGKEY=7527C999
 
 # play with the go-lang
-export GOROOT=$HOME/Projects/go/go-lang
+export GOROOT=$HOME/Projects/lang/go/go-lang
 export GOARCH=amd64
 export GOOS=linux
-
+export PATH=${GOROOT}/bin:${PATH}
 # current linux headers dir
 export MY_KERNEL_HEADER="/usr/src/linux-headers-$(uname -r)"
 
@@ -173,4 +173,4 @@ stty stop ^x
 
 cda && source build/envsetup.sh
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
