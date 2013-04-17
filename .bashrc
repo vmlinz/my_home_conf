@@ -143,7 +143,8 @@ export EDITOR=$VISUAL
 export ALTERNATE_EDITOR=$VISUAL
 
 alias em="jed"
-alias emc="emacsclient -t --alternate-editor="""
+alias emt="emacsclient -t --alternate-editor="""
+alias emc="emacsclient -c --alternate-editor="""
 
 # texlive2009
 if [ -d /usr/local/texlive/2009 ];then
