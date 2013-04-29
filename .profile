@@ -29,3 +29,4 @@ export LC_CTYPE=zh_CN.UTF-8
 # swap control and caps
 setxkbmap -option ctrl:swapcaps     # Swap Left Control and Caps Lock
 #setxkbmap -option ctrl:nocaps       # Make Caps Lock a Control key
+PATH="/usr/local/heroku/bin:$PATH"
