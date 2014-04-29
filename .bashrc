@@ -175,3 +175,5 @@ stty stop ^x
 cda && source build/envsetup.sh
 
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export USE_CCACHE=1
