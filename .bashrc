@@ -104,76 +104,9 @@ fi
 export LC_CTYPE=zh_CN.UTF-8
 # export LANG=zh_CN.UTF-8, no need for this
 
-# android sdk tools
-ANDROID_SDK_ROOT=$HOME/Projects/android/sdk/android-sdk-linux
-if [ -d $ANDROID_SDK_ROOT/tools ]; then
-    ANDROID_SDK_TOOLS=$ANDROID_SDK_ROOT/tools
-else
-    ANDROID_SDK_TOOLS=
-    echo "Android SDK tools not found!"
-fi
-
-# android sdk platform tools
-if [ -d $ANDROID_SDK_ROOT/platform-tools ]; then
-    ANDROID_SDK_PLAT_TOOLS=$ANDROID_SDK_ROOT/platform_tools
-else
-    ANDROID_SDK_PLAT_TOOLS=
-    echo "Android SDK platform tools not found!"
-fi
-
-# android ndk-r4
-ANDROID_NDK_ROOT=$HOME/Projects/android/ndk
-ANDROID_NDK_VERSION=android-ndk-r5
-if [ -d $ANDROID_NDK_ROOT/$ANDROID_NDK_VERSION ]; then
-    ANDROID_NDK_DIR=$HOME/Projects/android/ndk/android-ndk-r5
-else
-    ANDROID_NDK_DIR=
-    echo "Android ndk not found!"
-fi
-
-export PATH=$ANDROID_SDK_TOOLS:$ANDROID_SDK_PLAT_TOOLS:$ANDROID_NDK_DIR:$ANDROID_SDK_DIR:$PATH
-
-# android aosp dir
-MY_AOSP_ROOT=$HOME/Projects/android/aosp
-alias cda='cd $MY_AOSP_ROOT'
-
-# emacs editor
-export VISUAL="jed"
-export EDITOR=$VISUAL
-export ALTERNATE_EDITOR=$VISUAL
-
-alias em="jed"
 alias emt="emacsclient -t --alternate-editor="""
 alias emc="emacsclient -c --alternate-editor="""
 
-# texlive2009
-if [ -d /usr/local/texlive/2009 ];then
-    TLPATH=/usr/local/texlive/2009/bin/x86_64-linux
-    export PATH=$TLPATH:$PATH
-else
-   echo "local texlive2009 installation not found!"
-fi
-
-# set output to emacs way
 set -o emacs
 
-# export default gpg key
-export GPGKEY=7527C999
-
-# play with the go-lang
-export GOROOT=$HOME/Projects/lang/go/go-lang
-export GOARCH=amd64
-export GOOS=linux
-export PATH=${GOROOT}/bin:${PATH}
-# current linux headers dir
-export MY_KERNEL_HEADER="/usr/src/linux-headers-$(uname -r)"
-
-
-# set tty stop bit to ^x, so I can use ^s to isearch
 stty stop ^x
-
-cda && source build/envsetup.sh
-
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-export USE_CCACHE=1
