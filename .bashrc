@@ -110,3 +110,5 @@ alias emc="emacsclient -c --alternate-editor="""
 set -o emacs
 
 stty stop ^x
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

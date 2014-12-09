@@ -16,9 +16,11 @@ export DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git zsh-completions debian deb ruby rails rvm gem npm node docker tmux)
+plugins=(git zsh-completions debian deb ruby rails rvm gem npm node docker tmux go)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
